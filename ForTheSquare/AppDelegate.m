@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "StartViewController.h"
+#import "GameViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    StartViewController *rootVC = [StartViewController new];
+    self.window.rootViewController = rootVC;
+    
     return YES;
 }
 

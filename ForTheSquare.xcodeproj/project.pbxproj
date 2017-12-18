@@ -7,17 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66F4EB600C9B5452529E7ABA /* libPods-ForTheSquareUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D58B1786CAC97321EB81E883 /* libPods-ForTheSquareUITests.a */; };
-		79895DF520C1205DA1C6DF4E /* libPods-ForTheSquare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B7C12C178F34095C730FAC /* libPods-ForTheSquare.a */; };
+		46957B9F544EDAC2A14E312F /* Pods_ForTheSquareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5923A9227A608311EB87D117 /* Pods_ForTheSquareUITests.framework */; };
+		7AA0DEB24C1B61BC095067E6 /* Pods_ForTheSquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBC865D2F7C2C0AC8AB0FFE /* Pods_ForTheSquare.framework */; };
 		7E5CD3761FE397CF00002FED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3751FE397CF00002FED /* AppDelegate.m */; };
-		7E5CD3791FE397CF00002FED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3781FE397CF00002FED /* ViewController.m */; };
 		7E5CD37C1FE397CF00002FED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E5CD37A1FE397CF00002FED /* Main.storyboard */; };
 		7E5CD37E1FE397CF00002FED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E5CD37D1FE397CF00002FED /* Assets.xcassets */; };
 		7E5CD3811FE397CF00002FED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E5CD37F1FE397CF00002FED /* LaunchScreen.storyboard */; };
 		7E5CD3841FE397CF00002FED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3831FE397CF00002FED /* main.m */; };
 		7E5CD38E1FE397CF00002FED /* ForTheSquareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD38D1FE397CF00002FED /* ForTheSquareTests.m */; };
 		7E5CD3991FE397CF00002FED /* ForTheSquareUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3981FE397CF00002FED /* ForTheSquareUITests.m */; };
-		CBE23A59D7E8A6BB0B91AF52 /* libPods-ForTheSquareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39042B1F9A7CE969AB4E11A6 /* libPods-ForTheSquareTests.a */; };
+		7E5CD3A91FE3AD6F00002FED /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3A81FE3AD6F00002FED /* StartViewController.m */; };
+		7E5CD3AC1FE3AD9000002FED /* RuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3AB1FE3AD9000002FED /* RuleViewController.m */; };
+		7E5CD3AF1FE3ADC200002FED /* RankingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3AE1FE3ADC200002FED /* RankingListViewController.m */; };
+		7E5CD3B21FE3ADD500002FED /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3B11FE3ADD500002FED /* GameViewController.m */; };
+		7E5CD3B51FE3AE0400002FED /* ChooseLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3B41FE3AE0400002FED /* ChooseLevelViewController.m */; };
+		7E5CD3BC1FE3B92200002FED /* GameCalue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3BB1FE3B92200002FED /* GameCalue.m */; };
+		7E5CD3BF1FE3B9F300002FED /* BoxColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3BE1FE3B9F300002FED /* BoxColor.m */; };
+		7E5CD3C21FE3BAA200002FED /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3C11FE3BAA200002FED /* Box.m */; };
+		7E5CD3C91FE6BF6100002FED /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3C81FE6BF6100002FED /* CustomButton.m */; };
+		7E5CD3CC1FE75EFC00002FED /* UIView+QTAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3CA1FE75EFC00002FED /* UIView+QTAdd.m */; };
+		7E5CD3D21FE769D500002FED /* ChooseLevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3D11FE769D500002FED /* ChooseLevelCell.m */; };
+		7E5CD3D51FE7A38B00002FED /* RankingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3D41FE7A38B00002FED /* RankingCell.m */; };
+		D6C7B73B92D277DB2398792A /* Pods_ForTheSquareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0444BFC0670FF2B2CE10C4EA /* Pods_ForTheSquareTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,17 +49,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		39042B1F9A7CE969AB4E11A6 /* libPods-ForTheSquareTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForTheSquareTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0444BFC0670FF2B2CE10C4EA /* Pods_ForTheSquareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForTheSquareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C239A5A80F979C70082C5C3 /* Pods-ForTheSquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForTheSquare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForTheSquare/Pods-ForTheSquare.debug.xcconfig"; sourceTree = "<group>"; };
 		3FA680555976410CAA5C4F43 /* Pods-ForTheSquareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForTheSquareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForTheSquareTests/Pods-ForTheSquareTests.release.xcconfig"; sourceTree = "<group>"; };
 		56738E459CDF88D45029111C /* Pods-ForTheSquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForTheSquare.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForTheSquare/Pods-ForTheSquare.release.xcconfig"; sourceTree = "<group>"; };
+		5923A9227A608311EB87D117 /* Pods_ForTheSquareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForTheSquareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E028D7C9A771B6E1597C0FF /* Pods-ForTheSquareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForTheSquareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForTheSquareTests/Pods-ForTheSquareTests.debug.xcconfig"; sourceTree = "<group>"; };
-		70B7C12C178F34095C730FAC /* libPods-ForTheSquare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForTheSquare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5CD3711FE397CF00002FED /* ForTheSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForTheSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5CD3741FE397CF00002FED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7E5CD3751FE397CF00002FED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7E5CD3771FE397CF00002FED /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7E5CD3781FE397CF00002FED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7E5CD37B1FE397CF00002FED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E5CD37D1FE397CF00002FED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E5CD3801FE397CF00002FED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,8 +69,33 @@
 		7E5CD3941FE397CF00002FED /* ForTheSquareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForTheSquareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5CD3981FE397CF00002FED /* ForTheSquareUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForTheSquareUITests.m; sourceTree = "<group>"; };
 		7E5CD39A1FE397CF00002FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E5CD3A71FE3AD6F00002FED /* StartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		7E5CD3A81FE3AD6F00002FED /* StartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		7E5CD3AA1FE3AD9000002FED /* RuleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuleViewController.h; sourceTree = "<group>"; };
+		7E5CD3AB1FE3AD9000002FED /* RuleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuleViewController.m; sourceTree = "<group>"; };
+		7E5CD3AD1FE3ADC200002FED /* RankingListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankingListViewController.h; sourceTree = "<group>"; };
+		7E5CD3AE1FE3ADC200002FED /* RankingListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankingListViewController.m; sourceTree = "<group>"; };
+		7E5CD3B01FE3ADD500002FED /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		7E5CD3B11FE3ADD500002FED /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		7E5CD3B31FE3AE0400002FED /* ChooseLevelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseLevelViewController.h; sourceTree = "<group>"; };
+		7E5CD3B41FE3AE0400002FED /* ChooseLevelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseLevelViewController.m; sourceTree = "<group>"; wrapsLines = 1; };
+		7E5CD3B91FE3B2BF00002FED /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7E5CD3BA1FE3B92200002FED /* GameCalue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameCalue.h; sourceTree = "<group>"; };
+		7E5CD3BB1FE3B92200002FED /* GameCalue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameCalue.m; sourceTree = "<group>"; };
+		7E5CD3BD1FE3B9F300002FED /* BoxColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoxColor.h; sourceTree = "<group>"; };
+		7E5CD3BE1FE3B9F300002FED /* BoxColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoxColor.m; sourceTree = "<group>"; };
+		7E5CD3C01FE3BAA200002FED /* Box.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		7E5CD3C11FE3BAA200002FED /* Box.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; wrapsLines = 1; };
+		7E5CD3C71FE6BF6100002FED /* CustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		7E5CD3C81FE6BF6100002FED /* CustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		7E5CD3CA1FE75EFC00002FED /* UIView+QTAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QTAdd.m"; sourceTree = "<group>"; };
+		7E5CD3CB1FE75EFC00002FED /* UIView+QTAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QTAdd.h"; sourceTree = "<group>"; };
+		7E5CD3D01FE769D500002FED /* ChooseLevelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseLevelCell.h; sourceTree = "<group>"; };
+		7E5CD3D11FE769D500002FED /* ChooseLevelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseLevelCell.m; sourceTree = "<group>"; };
+		7E5CD3D31FE7A38B00002FED /* RankingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankingCell.h; sourceTree = "<group>"; };
+		7E5CD3D41FE7A38B00002FED /* RankingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankingCell.m; sourceTree = "<group>"; };
 		A6A664C6F6C1E493972346B9 /* Pods-ForTheSquareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForTheSquareUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForTheSquareUITests/Pods-ForTheSquareUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D58B1786CAC97321EB81E883 /* libPods-ForTheSquareUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForTheSquareUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEBC865D2F7C2C0AC8AB0FFE /* Pods_ForTheSquare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForTheSquare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E7090FC5BFBE3630C94BBB /* Pods-ForTheSquareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForTheSquareUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForTheSquareUITests/Pods-ForTheSquareUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79895DF520C1205DA1C6DF4E /* libPods-ForTheSquare.a in Frameworks */,
+				7AA0DEB24C1B61BC095067E6 /* Pods_ForTheSquare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBE23A59D7E8A6BB0B91AF52 /* libPods-ForTheSquareTests.a in Frameworks */,
+				D6C7B73B92D277DB2398792A /* Pods_ForTheSquareTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66F4EB600C9B5452529E7ABA /* libPods-ForTheSquareUITests.a in Frameworks */,
+				46957B9F544EDAC2A14E312F /* Pods_ForTheSquareUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,9 +130,9 @@
 		376F15974E9FE8DFF495DDF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				70B7C12C178F34095C730FAC /* libPods-ForTheSquare.a */,
-				39042B1F9A7CE969AB4E11A6 /* libPods-ForTheSquareTests.a */,
-				D58B1786CAC97321EB81E883 /* libPods-ForTheSquareUITests.a */,
+				BEBC865D2F7C2C0AC8AB0FFE /* Pods_ForTheSquare.framework */,
+				0444BFC0670FF2B2CE10C4EA /* Pods_ForTheSquareTests.framework */,
+				5923A9227A608311EB87D117 /* Pods_ForTheSquareUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,7 +162,6 @@
 		7E5CD3731FE397CF00002FED /* ForTheSquare */ = {
 			isa = PBXGroup;
 			children = (
-				7E5CD3A61FE39BF500002FED /* ViewControllers */,
 				7E5CD3741FE397CF00002FED /* AppDelegate.h */,
 				7E5CD3751FE397CF00002FED /* AppDelegate.m */,
 				7E5CD37A1FE397CF00002FED /* Main.storyboard */,
@@ -136,6 +169,11 @@
 				7E5CD37F1FE397CF00002FED /* LaunchScreen.storyboard */,
 				7E5CD3821FE397CF00002FED /* Info.plist */,
 				7E5CD3831FE397CF00002FED /* main.m */,
+				7E5CD3B91FE3B2BF00002FED /* PrefixHeader.pch */,
+				7E5CD3B71FE3AF6000002FED /* Common */,
+				7E5CD3B61FE3AE3300002FED /* Views */,
+				7E5CD3A61FE39BF500002FED /* ViewControllers */,
+				7E5CD3C31FE699D000002FED /* DB */,
 			);
 			path = ForTheSquare;
 			sourceTree = "<group>";
@@ -161,10 +199,53 @@
 		7E5CD3A61FE39BF500002FED /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7E5CD3771FE397CF00002FED /* ViewController.h */,
-				7E5CD3781FE397CF00002FED /* ViewController.m */,
+				7E5CD3A71FE3AD6F00002FED /* StartViewController.h */,
+				7E5CD3A81FE3AD6F00002FED /* StartViewController.m */,
+				7E5CD3AA1FE3AD9000002FED /* RuleViewController.h */,
+				7E5CD3AB1FE3AD9000002FED /* RuleViewController.m */,
+				7E5CD3AD1FE3ADC200002FED /* RankingListViewController.h */,
+				7E5CD3AE1FE3ADC200002FED /* RankingListViewController.m */,
+				7E5CD3B01FE3ADD500002FED /* GameViewController.h */,
+				7E5CD3B11FE3ADD500002FED /* GameViewController.m */,
+				7E5CD3B31FE3AE0400002FED /* ChooseLevelViewController.h */,
+				7E5CD3B41FE3AE0400002FED /* ChooseLevelViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7E5CD3B61FE3AE3300002FED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E5CD3C01FE3BAA200002FED /* Box.h */,
+				7E5CD3C11FE3BAA200002FED /* Box.m */,
+				7E5CD3C71FE6BF6100002FED /* CustomButton.h */,
+				7E5CD3C81FE6BF6100002FED /* CustomButton.m */,
+				7E5CD3D01FE769D500002FED /* ChooseLevelCell.h */,
+				7E5CD3D11FE769D500002FED /* ChooseLevelCell.m */,
+				7E5CD3D31FE7A38B00002FED /* RankingCell.h */,
+				7E5CD3D41FE7A38B00002FED /* RankingCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7E5CD3B71FE3AF6000002FED /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7E5CD3CB1FE75EFC00002FED /* UIView+QTAdd.h */,
+				7E5CD3CA1FE75EFC00002FED /* UIView+QTAdd.m */,
+				7E5CD3BA1FE3B92200002FED /* GameCalue.h */,
+				7E5CD3BB1FE3B92200002FED /* GameCalue.m */,
+				7E5CD3BD1FE3B9F300002FED /* BoxColor.h */,
+				7E5CD3BE1FE3B9F300002FED /* BoxColor.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7E5CD3C31FE699D000002FED /* DB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 		EE89C6A5B67B2472802A9084 /* Pods */ = {
@@ -399,9 +480,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ForTheSquare/Pods-ForTheSquare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -469,8 +557,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E5CD3791FE397CF00002FED /* ViewController.m in Sources */,
+				7E5CD3C91FE6BF6100002FED /* CustomButton.m in Sources */,
+				7E5CD3AF1FE3ADC200002FED /* RankingListViewController.m in Sources */,
+				7E5CD3D51FE7A38B00002FED /* RankingCell.m in Sources */,
+				7E5CD3B21FE3ADD500002FED /* GameViewController.m in Sources */,
+				7E5CD3CC1FE75EFC00002FED /* UIView+QTAdd.m in Sources */,
+				7E5CD3BF1FE3B9F300002FED /* BoxColor.m in Sources */,
+				7E5CD3BC1FE3B92200002FED /* GameCalue.m in Sources */,
+				7E5CD3A91FE3AD6F00002FED /* StartViewController.m in Sources */,
+				7E5CD3C21FE3BAA200002FED /* Box.m in Sources */,
 				7E5CD3841FE397CF00002FED /* main.m in Sources */,
+				7E5CD3AC1FE3AD9000002FED /* RuleViewController.m in Sources */,
+				7E5CD3D21FE769D500002FED /* ChooseLevelCell.m in Sources */,
+				7E5CD3B51FE3AE0400002FED /* ChooseLevelViewController.m in Sources */,
 				7E5CD3761FE397CF00002FED /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +736,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GPSCYF576Y;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ForTheSquare/PrefixHeader.pch";
 				INFOPLIST_FILE = ForTheSquare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -653,6 +755,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GPSCYF576Y;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ForTheSquare/PrefixHeader.pch";
 				INFOPLIST_FILE = ForTheSquare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
