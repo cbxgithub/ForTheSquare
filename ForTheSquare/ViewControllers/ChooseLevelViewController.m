@@ -137,7 +137,7 @@ static const float       itemHeight      = 150.0f;
         [_enterBtn setTitleColor:RGB(155, 155, 155) forState:UIControlStateNormal];
         [[_enterBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             GameViewController *vc = [[GameViewController alloc] init];
-            vc.level = self.seletedIndex + 1;
+            vc.level = self.seletedIndex + 3;
             [self presentViewController:vc animated:YES completion:nil];
         }];
     }

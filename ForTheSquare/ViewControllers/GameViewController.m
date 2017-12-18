@@ -21,20 +21,24 @@ static NSString *const kBoxCell = @"boxcell";
 
 @interface GameViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
-    NSUInteger boxDegree;   // 阶数
+    NSUInteger boxDegree;   // 阶
+    NSInteger stepCount;
 }
 
 @property (nonatomic, strong) UICollectionView *boxCollectionView;
 
 @property (nonatomic, strong) UICollectionViewFlowLayout *boxLayout;
 
-@property (nonatomic, strong) UISegmentedControl *boxSegcontrol;
+//@property (nonatomic, strong) UISegmentedControl *boxSegcontrol;
 
 @property (nonatomic, strong) NSArray *boxDegreeArray;
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
 
 @property (nonatomic, strong) NSArray *boxColors;
+
+@property (nonatomic, strong) UILabel *levelLabel;
+@property (nonatomic, strong) UILabel *stepLabel;
 
 @property (nonatomic, strong) CustomButton *backBtn;
 @property (nonatomic, strong) CustomButton *ruleBtn;
@@ -47,29 +51,61 @@ static NSString *const kBoxCell = @"boxcell";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
-    UIBarButtonItem *rule = [[UIBarButtonItem alloc] initWithTitle:@"规则" style:UIBarButtonItemStyleDone target:self action:@selector(rule)];
-    self.navigationItem.rightBarButtonItem = rule;
+    [self setupBtns];
     [self setupSeg];
     [self setupBox];
-    // Do any additional setup after loading the view.
+}
+
+- (void)setupBtns {
+    
+    @weakify(self);
+    [self.view addSubview:self.levelLabel];
+    [self.levelLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@(kMargin));
+        make.top.equalTo(@50);
+    }];
+    
+    [self.view addSubview:self.stepLabel];
+    [self.stepLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(@(-kMargin));
+        make.top.equalTo(@50);
+    }];
+    
+    [self.view addSubview:self.backBtn];
+    [self.backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.left.equalTo(@(kMargin));
+        make.bottom.equalTo(self.view).offset(-30);
+        make.width.equalTo(@101);
+        make.height.equalTo(@42);
+    }];
+    
+    [self.view addSubview:self.ruleBtn];
+    [self.ruleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.right.equalTo(@(-kMargin));
+        make.bottom.equalTo(self.view).offset(-30);
+        make.width.equalTo(@101);
+        make.height.equalTo(@42);
+    }];
 }
 
 - (void)setupSeg {
     
     // 目前支持3-6阶数
-    _boxDegreeArray = @[@"3",@"4",@"5",@"6",@"7"];
-    _boxSegcontrol = [[UISegmentedControl alloc] initWithItems:_boxDegreeArray];
-    [self.view addSubview:_boxSegcontrol];
-    [_boxSegcontrol mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.top.mas_equalTo(85.f);
-        make.left.mas_equalTo(35.f);
-        make.right.mas_equalTo(-35.f);
-        make.height.mas_equalTo(40.f);
-    }];
-    _boxSegcontrol.tintColor = occupiedColor();
-    _boxSegcontrol.selectedSegmentIndex = 0;
-    [_boxSegcontrol addTarget:self action:@selector(degreeChange:) forControlEvents:UIControlEventValueChanged];
+//    _boxDegreeArray = @[@"3",@"4",@"5",@"6",@"7"];
+//    _boxSegcontrol = [[UISegmentedControl alloc] initWithItems:_boxDegreeArray];
+//    [self.view addSubview:_boxSegcontrol];
+//    [_boxSegcontrol mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.top.mas_equalTo(85.f);
+//        make.left.mas_equalTo(35.f);
+//        make.right.mas_equalTo(-35.f);
+//        make.height.mas_equalTo(40.f);
+//    }];
+//    _boxSegcontrol.tintColor = occupiedColor();
+//    _boxSegcontrol.selectedSegmentIndex = 0;
+//    [_boxSegcontrol addTarget:self action:@selector(degreeChange:) forControlEvents:UIControlEventValueChanged];
     [self setupDegree:self.level];
 }
 
@@ -103,9 +139,11 @@ static NSString *const kBoxCell = @"boxcell";
     _boxCollectionView.backgroundColor = kLineColor;
     _boxCollectionView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_boxCollectionView];
+    
+    @weakify(self);
     [_boxCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.top.equalTo(_boxSegcontrol.mas_bottom).with.offset(25.f);
+        @strongify(self);
+        make.top.equalTo(self.levelLabel.mas_bottom).offset(30);
         make.left.mas_equalTo(kMargin);
         make.right.mas_equalTo(-kMargin);
         make.height.equalTo(_boxCollectionView.mas_width);
@@ -191,7 +229,7 @@ static NSString *const kBoxCell = @"boxcell";
     
     NSString *colorString = _boxColors[sender.tag];
     changeColor(colorString);
-    _boxSegcontrol.tintColor = occupiedColor();
+//    _boxSegcontrol.tintColor = occupiedColor();
     [_boxCollectionView reloadData];
 }
 
@@ -228,6 +266,9 @@ UIView *frameline() {
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    stepCount++;
+    self.stepLabel.text = [NSString stringWithFormat:@"步数：%ld",stepCount];
+
     NSArray *array = [NSArray arrayWithArray:self.dataSource];
     [self.dataSource removeAllObjects];
     [newBoxs(indexPath.row, array) enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -235,6 +276,33 @@ UIView *frameline() {
         [self.dataSource addObject:obj];
     }];
     [_boxCollectionView reloadData];
+    
+    BOOL isSuccess = YES;
+    for (id isOccupyed  in self.dataSource) {
+        isSuccess = [isOccupyed boolValue];
+        if (!isSuccess) {
+            break;
+        }
+    }
+    if (isSuccess) {
+        //先判断是否破纪录
+        //如果破纪录就存到数据库
+        //如果没有什么也不做
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"恭喜你！过关了" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction: [UIAlertAction actionWithTitle:@"再玩一次" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self setupDegree:self.level];
+            stepCount = 0;
+            self.stepLabel.text = [NSString stringWithFormat:@"步数：%ld",stepCount];
+        }]];
+        [alert addAction: [UIAlertAction actionWithTitle:@"下一关" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            self.level+=1;
+            [self setupDegree:self.level];
+            stepCount = 0;
+            self.stepLabel.text = [NSString stringWithFormat:@"步数：%ld",stepCount];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (NSMutableArray *)dataSource {
@@ -245,8 +313,8 @@ UIView *frameline() {
     return _dataSource;
 }
 
-- (NSInteger *)level{
-    if (_level == 0) {
+- (NSInteger)level{
+    if (_level < 3) {
         _level = 3;
     }
     return _level;
@@ -273,16 +341,35 @@ UIView *frameline() {
         [_ruleBtn setTitleColor:RGB(155, 155, 155) forState:UIControlStateNormal];
         [[_ruleBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             RuleViewController *vc = [[RuleViewController alloc] init];
+            vc.isFromGame = YES;
             [self presentViewController:vc animated:YES completion:nil];
         }];
     }
     return _ruleBtn;
 }
 
+- (UILabel *)levelLabel {
+    if (!_levelLabel) {
+        _levelLabel = [[UILabel alloc] init];
+        _levelLabel.font = [UIFont systemFontOfSize:20];
+        _levelLabel.textColor = RGB(97, 97, 97);
+        _levelLabel.text = [NSString stringWithFormat:@"1-%ld",self.level];
+    }
+    return _levelLabel;
+}
+
+- (UILabel *)stepLabel {
+    if (!_stepLabel) {
+        _stepLabel = [[UILabel alloc] init];
+        _stepLabel.font = [UIFont systemFontOfSize:20];
+        _stepLabel.textColor = RGB(97, 97, 97);
+        _stepLabel.text = [NSString stringWithFormat:@"步数：%ld",stepCount];
+    }
+    return _stepLabel;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

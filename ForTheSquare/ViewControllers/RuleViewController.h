@@ -10,4 +10,6 @@
 
 @interface RuleViewController : UIViewController
 
+@property (nonatomic, assign) BOOL isFromGame;
+
 @end

@@ -147,7 +147,7 @@ static float cellHeight = 60;
         cell.level = -1;
         cell.stepCount = -1;
     }else{
-        cell.level = 1;
+        cell.level = indexPath.row + 1;
         cell.stepCount = 20;
     }
     

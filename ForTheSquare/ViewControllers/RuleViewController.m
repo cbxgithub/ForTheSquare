@@ -109,15 +109,27 @@
 - (CustomButton *)enterBtn {
     if (!_enterBtn) {
         _enterBtn = [[CustomButton alloc] init];
-        [_enterBtn setTitle:@"开始游戏" forState:UIControlStateNormal];
         [_enterBtn setTitleColor:RGB(74, 74, 74) forState:UIControlStateHighlighted];
         [_enterBtn setTitleColor:RGB(155, 155, 155) forState:UIControlStateNormal];
-        [[_enterBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            ChooseLevelViewController *vc = [[ChooseLevelViewController alloc] init];
-            [self presentViewController:vc animated:YES completion:nil];
-        }];
+        
+        if (self.isFromGame) {
+            [_enterBtn setTitle:@"继续游戏" forState:UIControlStateNormal];
+            [[_enterBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
+        }else {
+            [_enterBtn setTitle:@"开始游戏" forState:UIControlStateNormal];
+            [[_enterBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+                ChooseLevelViewController *vc = [[ChooseLevelViewController alloc] init];
+                [self presentViewController:vc animated:YES completion:nil];
+            }];
+        }
     }
     return _enterBtn;
+}
+
+- (void)setIsFromGame:(BOOL)isFromGame{
+    _isFromGame = isFromGame;
 }
 
 

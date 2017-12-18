@@ -10,6 +10,6 @@
 
 @interface GameViewController : UIViewController
 
-@property (nonatomic, assign) NSInteger *level;
+@property (nonatomic, assign) NSInteger level;
 
 @end
