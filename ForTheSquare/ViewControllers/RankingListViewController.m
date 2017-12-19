@@ -10,6 +10,7 @@
 #import "CustomButton.h"
 #import "ChooseLevelViewController.h"
 #import "RankingCell.h"
+#import "RankDB.h"
 
 static float cellHeight = 60;
 
@@ -22,6 +23,8 @@ static float cellHeight = 60;
 @property (nonatomic, strong) CustomButton *backBtn;
 @property (nonatomic, strong) CustomButton *enterBtn;
 
+@property (nonatomic, strong) NSArray<RankModel *> *rankList;
+
 @end
 
 @implementation RankingListViewController
@@ -29,6 +32,8 @@ static float cellHeight = 60;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.rankList = [RankDB getRankList];
     
     [self initSubviews];
 }
@@ -128,7 +133,7 @@ static float cellHeight = 60;
 # pragma mark - tableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 7;
+    return self.rankList.count + 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -144,11 +149,11 @@ static float cellHeight = 60;
     }
     
     if (indexPath.row == 0) {
-        cell.level = -1;
-        cell.stepCount = -1;
+        cell.level = @"关卡";
+        cell.stepCount = @"步数";
     }else{
-        cell.level = indexPath.row + 1;
-        cell.stepCount = 20;
+        cell.level = self.rankList[indexPath.row - 1].levelName;
+        cell.stepCount = self.rankList[indexPath.row - 1].stepCount;
     }
     
     return cell;

@@ -14,6 +14,7 @@
 #import "CustomButton.h"
 #import "RuleViewController.h"
 #import "PassAlert.h"
+#import "RankDB.h"
 
 static const CGFloat kMargin = 15.f;
 static const CGFloat kLineSpacing = 1.0;
@@ -287,8 +288,10 @@ UIView *frameline() {
     }
     if (isSuccess) {
         //先判断是否破纪录
-        //如果破纪录就存到数据库
-        //如果没有什么也不做
+        NSInteger rankStepCount = [RankDB getstepCountWith:self.levelLabel.text];
+        if ((rankStepCount > 0 && stepCount < rankStepCount) || rankStepCount == 0) { //如果破纪录就存到数据库
+            [RankDB updateRankWith:self.levelLabel.text andStepCount:[NSString stringWithFormat:@"%ld",stepCount]];
+        }
         
         [PassAlert showWithAgainBlock:^{
             [self setupDegree:self.level+2];

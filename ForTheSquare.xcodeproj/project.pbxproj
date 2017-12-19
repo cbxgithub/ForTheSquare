@@ -10,6 +10,8 @@
 		46957B9F544EDAC2A14E312F /* Pods_ForTheSquareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5923A9227A608311EB87D117 /* Pods_ForTheSquareUITests.framework */; };
 		7AA0DEB24C1B61BC095067E6 /* Pods_ForTheSquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBC865D2F7C2C0AC8AB0FFE /* Pods_ForTheSquare.framework */; };
 		7E2412661FE8A5A500C99E42 /* PassAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2412651FE8A5A500C99E42 /* PassAlert.m */; };
+		7E24126F1FE8DDC400C99E42 /* RankDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E24126E1FE8DDC400C99E42 /* RankDB.m */; };
+		7E2412721FE8EDF000C99E42 /* RankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2412711FE8EDF000C99E42 /* RankModel.m */; };
 		7E5CD3761FE397CF00002FED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3751FE397CF00002FED /* AppDelegate.m */; };
 		7E5CD37C1FE397CF00002FED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E5CD37A1FE397CF00002FED /* Main.storyboard */; };
 		7E5CD37E1FE397CF00002FED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E5CD37D1FE397CF00002FED /* Assets.xcassets */; };
@@ -26,7 +28,6 @@
 		7E5CD3BF1FE3B9F300002FED /* BoxColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3BE1FE3B9F300002FED /* BoxColor.m */; };
 		7E5CD3C21FE3BAA200002FED /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3C11FE3BAA200002FED /* Box.m */; };
 		7E5CD3C91FE6BF6100002FED /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3C81FE6BF6100002FED /* CustomButton.m */; };
-		7E5CD3CC1FE75EFC00002FED /* UIView+QTAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3CA1FE75EFC00002FED /* UIView+QTAdd.m */; };
 		7E5CD3D21FE769D500002FED /* ChooseLevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3D11FE769D500002FED /* ChooseLevelCell.m */; };
 		7E5CD3D51FE7A38B00002FED /* RankingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3D41FE7A38B00002FED /* RankingCell.m */; };
 		D6C7B73B92D277DB2398792A /* Pods_ForTheSquareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0444BFC0670FF2B2CE10C4EA /* Pods_ForTheSquareTests.framework */; };
@@ -58,6 +59,10 @@
 		5E028D7C9A771B6E1597C0FF /* Pods-ForTheSquareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForTheSquareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForTheSquareTests/Pods-ForTheSquareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E2412641FE8A5A500C99E42 /* PassAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassAlert.h; sourceTree = "<group>"; };
 		7E2412651FE8A5A500C99E42 /* PassAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassAlert.m; sourceTree = "<group>"; };
+		7E24126D1FE8DDC400C99E42 /* RankDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankDB.h; sourceTree = "<group>"; };
+		7E24126E1FE8DDC400C99E42 /* RankDB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankDB.m; sourceTree = "<group>"; wrapsLines = 1; };
+		7E2412701FE8EDF000C99E42 /* RankModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankModel.h; sourceTree = "<group>"; };
+		7E2412711FE8EDF000C99E42 /* RankModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankModel.m; sourceTree = "<group>"; };
 		7E5CD3711FE397CF00002FED /* ForTheSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForTheSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5CD3741FE397CF00002FED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7E5CD3751FE397CF00002FED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -91,8 +96,6 @@
 		7E5CD3C11FE3BAA200002FED /* Box.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; wrapsLines = 1; };
 		7E5CD3C71FE6BF6100002FED /* CustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		7E5CD3C81FE6BF6100002FED /* CustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
-		7E5CD3CA1FE75EFC00002FED /* UIView+QTAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QTAdd.m"; sourceTree = "<group>"; };
-		7E5CD3CB1FE75EFC00002FED /* UIView+QTAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QTAdd.h"; sourceTree = "<group>"; };
 		7E5CD3D01FE769D500002FED /* ChooseLevelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseLevelCell.h; sourceTree = "<group>"; };
 		7E5CD3D11FE769D500002FED /* ChooseLevelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseLevelCell.m; sourceTree = "<group>"; };
 		7E5CD3D31FE7A38B00002FED /* RankingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankingCell.h; sourceTree = "<group>"; };
@@ -236,8 +239,6 @@
 		7E5CD3B71FE3AF6000002FED /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				7E5CD3CB1FE75EFC00002FED /* UIView+QTAdd.h */,
-				7E5CD3CA1FE75EFC00002FED /* UIView+QTAdd.m */,
 				7E5CD3BA1FE3B92200002FED /* GameCalue.h */,
 				7E5CD3BB1FE3B92200002FED /* GameCalue.m */,
 				7E5CD3BD1FE3B9F300002FED /* BoxColor.h */,
@@ -249,6 +250,10 @@
 		7E5CD3C31FE699D000002FED /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				7E24126D1FE8DDC400C99E42 /* RankDB.h */,
+				7E24126E1FE8DDC400C99E42 /* RankDB.m */,
+				7E2412701FE8EDF000C99E42 /* RankModel.h */,
+				7E2412711FE8EDF000C99E42 /* RankModel.m */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -565,8 +570,9 @@
 				7E5CD3C91FE6BF6100002FED /* CustomButton.m in Sources */,
 				7E5CD3AF1FE3ADC200002FED /* RankingListViewController.m in Sources */,
 				7E5CD3D51FE7A38B00002FED /* RankingCell.m in Sources */,
+				7E2412721FE8EDF000C99E42 /* RankModel.m in Sources */,
 				7E5CD3B21FE3ADD500002FED /* GameViewController.m in Sources */,
-				7E5CD3CC1FE75EFC00002FED /* UIView+QTAdd.m in Sources */,
+				7E24126F1FE8DDC400C99E42 /* RankDB.m in Sources */,
 				7E5CD3BF1FE3B9F300002FED /* BoxColor.m in Sources */,
 				7E5CD3BC1FE3B92200002FED /* GameCalue.m in Sources */,
 				7E5CD3A91FE3AD6F00002FED /* StartViewController.m in Sources */,

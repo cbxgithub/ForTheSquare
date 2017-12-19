@@ -11,6 +11,8 @@
 
 @interface PassAlert()
 
+@property (nonatomic, strong) UIView *containerView;
+
 @property (nonatomic, strong) UILabel *passLabel;
 
 @property (nonatomic, strong) CustomButton *againBtn;
@@ -30,10 +32,7 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:passAlert];
     [passAlert mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(window);
-        make.left.equalTo(@30);
-        make.right.equalTo(@-30);
-        make.height.equalTo(@165);
+        make.top.bottom.left.right.equalTo(window);
     }];
 }
 
@@ -48,33 +47,50 @@
 
 - (void)initSubviews {
     
-    self.backgroundColor = [UIColor whiteColor];
-    
+    self.backgroundColor = [UIColor clearColor];
     @weakify(self);
-    [self addSubview:self.passLabel];
+
+    [self addSubview:self.containerView];
+    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.center.equalTo(self);
+        make.left.equalTo(@30);
+        make.right.equalTo(@-30);
+        make.height.equalTo(@165);
+    }];
+    
+    [self.containerView addSubview:self.passLabel];
     [self.passLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
-        make.centerX.equalTo(self);
+        make.centerX.equalTo(self.containerView);
         make.top.equalTo(@30);
     }];
     
-    [self addSubview:self.againBtn];
+    [self.containerView addSubview:self.againBtn];
     [self.againBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
-        make.bottom.equalTo(self.mas_bottom).offset(-30);
+        make.bottom.equalTo(self.containerView.mas_bottom).offset(-30);
         make.left.equalTo(@30);
         make.width.equalTo(@101);
         make.height.equalTo(@42);
     }];
     
-    [self addSubview:self.nextBtn];
+    [self.containerView addSubview:self.nextBtn];
     [self.nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
-        make.bottom.equalTo(self.mas_bottom).offset(-30);
+        make.bottom.equalTo(self.containerView.mas_bottom).offset(-30);
         make.right.equalTo(@-30);
         make.width.equalTo(@101);
         make.height.equalTo(@42);
     }];
+}
+
+- (UIView *)containerView {
+    if (!_containerView) {
+        _containerView = [[UIView alloc] init];
+        _containerView.backgroundColor = [UIColor whiteColor];
+    }
+    return _containerView;
 }
 
 - (UILabel *)passLabel {

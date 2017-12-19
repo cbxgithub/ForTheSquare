@@ -10,8 +10,8 @@
 
 @interface RankingCell : UITableViewCell
 
-@property (nonatomic, assign) NSInteger level;
+@property (nonatomic, copy) NSString *level;
 
-@property (nonatomic, assign) NSInteger stepCount;
+@property (nonatomic, copy) NSString *stepCount;
 
 @end

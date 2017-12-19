@@ -66,28 +66,29 @@
     return _stepLabel;
 }
 
-- (void)setLevel:(NSInteger)level {
+- (void)setLevel:(NSString *)level {
     _level = level;
     
-    if (level == -1) {
-        self.levelLabel.text = [NSString stringWithFormat:@"关卡"];
-    }else{
-        self.levelLabel.text = [NSString stringWithFormat:@"1-%ld",(level+1)];
-    }
+    self.levelLabel.text = level;
+    
+//    if (level == -1) {
+//        self.levelLabel.text = [NSString stringWithFormat:@"关卡"];
+//    }else{
+//        self.levelLabel.text = [NSString stringWithFormat:@"1-%ld",(level+1)];
+//    }
     
     [self.levelLabel sizeToFit];
 }
 
-- (void)setStepCount:(NSInteger)stepCount {
+- (void)setStepCount:(NSString *)stepCount {
     _stepCount = stepCount;
     
-    if (stepCount == -1) {
-        self.stepLabel.text = [NSString stringWithFormat:@"步数"];
-    }else if(stepCount == 0){
-        self.stepLabel.text = [NSString stringWithFormat:@"未通过"];
-    }else {
-        self.stepLabel.text = [NSString stringWithFormat:@"%ld",stepCount];
-    }
+    self.stepLabel.text = stepCount;
+//    if (stepCount == -1) {
+//        self.stepLabel.text = [NSString stringWithFormat:@"步数"];
+//    }else {
+//        self.stepLabel.text = [NSString stringWithFormat:@"%ld",stepCount];
+//    }
     
     [self.stepLabel sizeToFit];
 }

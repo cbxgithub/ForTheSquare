@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "StartViewController.h"
 #import "GameViewController.h"
+#import <FMDB/FMDB.h>
 
 @interface AppDelegate ()
 
@@ -21,9 +22,11 @@
 
     StartViewController *rootVC = [StartViewController new];
     self.window.rootViewController = rootVC;
-    
+        
     return YES;
 }
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

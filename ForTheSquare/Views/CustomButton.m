@@ -8,7 +8,6 @@
 
 #import "CustomButton.h"
 #import <ReactiveObjC/ReactiveObjC.h>
-#import "UIView+QTAdd.h"
 
 @implementation CustomButton
 
