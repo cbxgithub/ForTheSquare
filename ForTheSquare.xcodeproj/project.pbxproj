@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		46957B9F544EDAC2A14E312F /* Pods_ForTheSquareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5923A9227A608311EB87D117 /* Pods_ForTheSquareUITests.framework */; };
 		7AA0DEB24C1B61BC095067E6 /* Pods_ForTheSquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBC865D2F7C2C0AC8AB0FFE /* Pods_ForTheSquare.framework */; };
+		7E2412661FE8A5A500C99E42 /* PassAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2412651FE8A5A500C99E42 /* PassAlert.m */; };
 		7E5CD3761FE397CF00002FED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5CD3751FE397CF00002FED /* AppDelegate.m */; };
 		7E5CD37C1FE397CF00002FED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E5CD37A1FE397CF00002FED /* Main.storyboard */; };
 		7E5CD37E1FE397CF00002FED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E5CD37D1FE397CF00002FED /* Assets.xcassets */; };
@@ -55,6 +56,8 @@
 		56738E459CDF88D45029111C /* Pods-ForTheSquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForTheSquare.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForTheSquare/Pods-ForTheSquare.release.xcconfig"; sourceTree = "<group>"; };
 		5923A9227A608311EB87D117 /* Pods_ForTheSquareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForTheSquareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E028D7C9A771B6E1597C0FF /* Pods-ForTheSquareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForTheSquareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForTheSquareTests/Pods-ForTheSquareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E2412641FE8A5A500C99E42 /* PassAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassAlert.h; sourceTree = "<group>"; };
+		7E2412651FE8A5A500C99E42 /* PassAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassAlert.m; sourceTree = "<group>"; };
 		7E5CD3711FE397CF00002FED /* ForTheSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForTheSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5CD3741FE397CF00002FED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7E5CD3751FE397CF00002FED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 				7E5CD3D11FE769D500002FED /* ChooseLevelCell.m */,
 				7E5CD3D31FE7A38B00002FED /* RankingCell.h */,
 				7E5CD3D41FE7A38B00002FED /* RankingCell.m */,
+				7E2412641FE8A5A500C99E42 /* PassAlert.h */,
+				7E2412651FE8A5A500C99E42 /* PassAlert.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -566,6 +571,7 @@
 				7E5CD3BC1FE3B92200002FED /* GameCalue.m in Sources */,
 				7E5CD3A91FE3AD6F00002FED /* StartViewController.m in Sources */,
 				7E5CD3C21FE3BAA200002FED /* Box.m in Sources */,
+				7E2412661FE8A5A500C99E42 /* PassAlert.m in Sources */,
 				7E5CD3841FE397CF00002FED /* main.m in Sources */,
 				7E5CD3AC1FE3AD9000002FED /* RuleViewController.m in Sources */,
 				7E5CD3D21FE769D500002FED /* ChooseLevelCell.m in Sources */,

@@ -13,6 +13,7 @@
 #import "BoxColor.h"
 #import "CustomButton.h"
 #import "RuleViewController.h"
+#import "PassAlert.h"
 
 static const CGFloat kMargin = 15.f;
 static const CGFloat kLineSpacing = 1.0;
@@ -106,7 +107,7 @@ static NSString *const kBoxCell = @"boxcell";
 //    _boxSegcontrol.tintColor = occupiedColor();
 //    _boxSegcontrol.selectedSegmentIndex = 0;
 //    [_boxSegcontrol addTarget:self action:@selector(degreeChange:) forControlEvents:UIControlEventValueChanged];
-    [self setupDegree:self.level];
+    [self setupDegree:self.level+2];
 }
 
 - (void)degreeChange:(UISegmentedControl *)segment {
@@ -288,20 +289,33 @@ UIView *frameline() {
         //先判断是否破纪录
         //如果破纪录就存到数据库
         //如果没有什么也不做
-
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"恭喜你！过关了" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction: [UIAlertAction actionWithTitle:@"再玩一次" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [self setupDegree:self.level];
+        
+        [PassAlert showWithAgainBlock:^{
+            [self setupDegree:self.level+2];
             stepCount = 0;
             self.stepLabel.text = [NSString stringWithFormat:@"步数：%ld",stepCount];
-        }]];
-        [alert addAction: [UIAlertAction actionWithTitle:@"下一关" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        } NextBlock:^{
             self.level+=1;
-            [self setupDegree:self.level];
+            [self setupDegree:self.level+2];
             stepCount = 0;
             self.stepLabel.text = [NSString stringWithFormat:@"步数：%ld",stepCount];
-        }]];
-        [self presentViewController:alert animated:YES completion:nil];
+            self.levelLabel.text = [NSString stringWithFormat:@"1-%ld",self.level];
+        }];
+
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"恭喜你！过关了" preferredStyle:UIAlertControllerStyleAlert];
+//        [alert addAction: [UIAlertAction actionWithTitle:@"再玩一次" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            [self setupDegree:self.level+2];
+//            stepCount = 0;
+//            self.stepLabel.text = [NSString stringWithFormat:@"步数：%ld",stepCount];
+//        }]];
+//        [alert addAction: [UIAlertAction actionWithTitle:@"下一关" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            self.level+=1;
+//            [self setupDegree:self.level+2];
+//            stepCount = 0;
+//            self.stepLabel.text = [NSString stringWithFormat:@"步数：%ld",stepCount];
+//            self.levelLabel.text = [NSString stringWithFormat:@"1-%ld",self.level];
+//        }]];
+//        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -313,12 +327,6 @@ UIView *frameline() {
     return _dataSource;
 }
 
-- (NSInteger)level{
-    if (_level < 3) {
-        _level = 3;
-    }
-    return _level;
-}
 
 - (CustomButton *)backBtn {
     if (!_backBtn) {
